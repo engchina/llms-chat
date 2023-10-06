@@ -1,0 +1,17 @@
+modelscope>=1.9.1
+transformers==4.33.0
+transformers_stream_generator
+packaging
+ninja
+accelerate
+scipy
+einops
+tiktoken
+auto-gptq
+optimum
+cpm_kernels
+gradio
+mdtex2html
+cohere
+pandas
+python-dotenv
