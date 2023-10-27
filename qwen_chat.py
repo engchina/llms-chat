@@ -30,5 +30,7 @@ async def chat_stream(message, history):
 
 qwen_chat = gr.ChatInterface(fn=chat_stream, examples=["hello", "你好", "こんにちわ"], title="Qwen-Chat")
 
+qwen_chat.queue()
+
 if __name__ == "__main__":
-    qwen_chat.queue().launch()
+    qwen_chat.launch()

@@ -69,25 +69,29 @@ randomness_text = gr.Slider(label="Randomness(Temperature)",
                             interactive=True
                             )
 
-demo = gr.ChatInterface(fn=chat_stream,
-                        additional_inputs=[model_text,
-                                           citation_quality_text,
-                                           prompt_truncation_text,
-                                           randomness_text
-                                           ],
-                        additional_inputs_accordion_name="Additional Inputs",
-                        examples=[
-                            ["Can you give me a global market overview of the solar panels?", "command", "accurate",
-                             "auto", 0.3],
-                            ["Gather business intelligence on the Chinese markets", "command-nightly", "accurate",
-                             "auto", 0.3],
-                            ["Summarize recent news about the North American tech job market", "command-light", "fast",
-                             "off", 0.9],
-                            ["Give me a rundown of AI startups in the productivity space", "command-light-nightly",
-                             "fast",
-                             "off", 2]],
-                        title="(Unofficial) Chat with Cohere Coral")
+coral_chat = gr.ChatInterface(fn=chat_stream,
+                              additional_inputs=[model_text,
+                                                 citation_quality_text,
+                                                 prompt_truncation_text,
+                                                 randomness_text
+                                                 ],
+                              additional_inputs_accordion_name="Additional Inputs",
+                              examples=[
+                                  ["Can you give me a global market overview of the solar panels?", "command",
+                                   "accurate",
+                                   "auto", 0.3],
+                                  ["Gather business intelligence on the Chinese markets", "command-nightly", "accurate",
+                                   "auto", 0.3],
+                                  ["Summarize recent news about the North American tech job market", "command-light",
+                                   "fast",
+                                   "off", 0.9],
+                                  ["Give me a rundown of AI startups in the productivity space",
+                                   "command-light-nightly",
+                                   "fast",
+                                   "off", 2]],
+                              title="(Unofficial) Chat with Cohere Coral")
 
-demo.queue()
+coral_chat.queue()
+
 if __name__ == "__main__":
-    demo.launch()
+    coral_chat.launch()

@@ -17,5 +17,7 @@ async def chat_stream(message, history):
 
 chatglm2_chat = gr.ChatInterface(fn=chat_stream, examples=["hello", "你好", "こんにちわ"], title="ChatGLM2-Chat")
 
+chatglm2_chat.queue()
+
 if __name__ == "__main__":
-    chatglm2_chat.queue().launch()
+    chatglm2_chat.launch()
