@@ -169,8 +169,8 @@ if __name__ == "__main__":
     from modelscope import AutoModelForCausalLM, AutoTokenizer, snapshot_download
     from modelscope import GenerationConfig
 
-    DEFAULT_CKPT_PATH = "Qwen/Qwen-14B-Chat-Int4"
-    DEFAULT_REVISION = "v1.0.4"
+    DEFAULT_CKPT_PATH = "Qwen/Qwen-14B-Chat-Int8"
+    DEFAULT_REVISION = "v1.0.6"
 
     model_dir = snapshot_download(DEFAULT_CKPT_PATH, revision=DEFAULT_REVISION)
     tokenizer = AutoTokenizer.from_pretrained(
